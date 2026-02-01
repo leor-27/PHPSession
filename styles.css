@@ -1,0 +1,84 @@
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loginBox {
+    margin: 0 auto;
+    width: 520px;
+    height: 240px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.45);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(6px);
+    padding-top: 30px;
+    transition: height 0.4s ease;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+.fields {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 300px;
+    margin-top: 20px;
+}
+
+.header {
+    font-size: 48px;
+    padding-top: 50px;
+}
+
+.loginTime {
+    padding-top: 14px;
+}
+
+.basicWorkout {
+    padding-top: 32px;
+    font-size: 24px;
+}
+
+.today {
+    font-weight: 500;
+}
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 45px;
+}
+
+.videos iframe {
+    padding-top: 24px;
+}
+
+.videosHeader {
+    font-size: 20px;
+}
+
+.vipBox {
+    background-color: gold;
+    padding: 8px 16px;
+    display: inline-block;   /* KEY FIX */
+    border-radius: 8px;
+    margin-top: 48px;
+    font-weight: bold;
+}
+
+.logout {
+    padding: 45px 0;
+    display: inline-block;
+}
