@@ -1,4 +1,4 @@
-## FitTrack – PHP Sessions Project
+## FitTrack – PHP Session Activity
 
 Test accounts:
 - regular1 / regular123 (Regular)
