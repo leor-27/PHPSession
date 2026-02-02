@@ -1,11 +1,13 @@
 html, body {
     overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     justify-content: center; 
     align-items: center;
     text-align: center;
+    background-color: rgb(231, 231, 231);
 }
 
 * {
@@ -14,10 +16,12 @@ body {
     box-sizing: border-box;
 }
 
+/* index.php */
+
 .loginBox {
     margin: 0 auto;
     width: 520px;
-    height: 240px;
+    height: 290px;
     border-radius: 15px;
     background: rgba(255,255,255,0.45);
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -26,14 +30,35 @@ body {
     transition: height 0.4s ease;
     overflow: hidden;
     margin-bottom: 80px;
+    margin-top: 250px;
+}
+
+.field-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 25px;
 }
 
 .fields {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: 300px;
-    margin-top: 20px;
+    padding-top: 25px;
 }
+
+.login {
+    cursor: pointer;
+    padding-top: 15px;
+}
+
+.login-button {
+    cursor: pointer;
+    height: 30px;
+    width: 70px;
+    color: black;
+    font-weight: 500;
+}
+
+/* workout.php */
 
 .header {
     font-size: 48px;
@@ -46,7 +71,7 @@ body {
 
 .basicWorkout {
     padding-top: 32px;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .today {
@@ -72,13 +97,27 @@ body {
 .vipBox {
     background-color: gold;
     padding: 8px 16px;
-    display: inline-block;   /* KEY FIX */
+    display: inline-block;
     border-radius: 8px;
     margin-top: 48px;
     font-weight: bold;
 }
 
-.logout {
-    padding: 45px 0;
+.logout-button {
+    margin: 45px 0;
     display: inline-block;
+    height: 30px;
+    width: 70px;
+    background-color: rgb(176, 176, 176);
+    border-radius: 5px;
+}
+
+.logout {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.logout-button:hover {
+  transform: scale(1.02);
 }

@@ -4,7 +4,7 @@ session_start();
 include 'backend/db.php';
 date_default_timezone_set('Asia/Manila');
 
-if(!isset($_SESSION['user'])) {
+if(!isset($_SESSION['user'])) { // redirects if no user logged in
     header("Location: index.php");
     exit();
 }
@@ -14,7 +14,7 @@ if (isset($_SESSION['latestActivity']) && (time() - $_SESSION['latestActivity'] 
     session_destroy();
     header("Location: index.php?status=10SecondsOfInactivity");
     exit();
-}
+} // logs out if the user was 10 seconds inactive
 
 $_SESSION['latestActivity'] = time();
 ?>
@@ -31,7 +31,7 @@ $_SESSION['latestActivity'] = time();
             if (event.persisted) {
                 window.location.reload();
             }
-        });
+        }); // just ensures that after logging out and clicking the back button the previously logged out page won't show up
     </script>
 </head>
 <body>
@@ -39,7 +39,7 @@ $_SESSION['latestActivity'] = time();
     <p class = "loginTime">Last logged in at: <?php echo $_SESSION['latestLoginTime']; ?></p> <br>
     <p class = "basicWorkout"><i class = "today">Today's Basic Workout:</i> 50 Pushups & 5km Run. </p>
 
-    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'VIP'): ?>
+    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'VIP'): ?> <!-- only executes if role is VIP -->
         <div class = "vipBox">
             <h2>VIP Content</h2>
         </div>
@@ -54,6 +54,8 @@ $_SESSION['latestActivity'] = time();
         </div>
     <?php endif; ?>
 
-    <a class = "logout" href = "logout.php">Logout</a>
+    <button class = "logout-button">
+        <a class = "logout" href = "logout.php">Logout</a>
+    </button>
 </body>
 </html>

@@ -3,7 +3,7 @@ session_start();
 include 'db.php';
 date_default_timezone_set('Asia/Manila');
 
-$username = trim($_POST['username'] ?? '');
+$username = trim($_POST['username'] ?? ''); // to remove potential whitespace
 $password = $_POST['password'] ?? '';
 
 if (!$username || !$password) {
@@ -22,6 +22,7 @@ $userResult=$userRow->get_result();
 if ($user = $userResult->fetch_assoc()) {
     if($password === $user['PASSWORD']) {
 
+        /* declarations of various sessions to be used in workout.php */
         $_SESSION['user'] = $user['USERNAME'];
         $_SESSION['role'] = $user['ROLE'];
         $_SESSION['latestActivity'] = time();
@@ -36,5 +37,5 @@ if ($user = $userResult->fetch_assoc()) {
 echo "<script>
      alert('Invalid credentials.');
      window.history.back();
-</script>";
+</script>"; // executes if everything that came before was false (wrong username/password)
 exit();
